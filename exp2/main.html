@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#d1 {
+  color: azure;
+  align-content: center;
+  background-color: brown;
+}
+.d2 {
+  align-content: center;
+  background-color: pink;
+  font-family: Arial;
+}
+#d3 {
+  color: azure;
+  align-content: center;
+  background-color: goldenrod;
+}
+</style>
+</head>
+<body bgcolor="sky blue">
+<title>Student Placement Registration Form</title>
+<h1><p>Student Placement Registration Form</p></h1>
+<hr>
+<form>
+  <div id="d1">
+    <fieldset>
+      <legend>Academic Information</legend>
+      Last Year Percentage <input type="textbox" name="per">
+      <br><br>
+      Any Certification:
+      <input type="checkbox" name="box">PCAP_Python
+      <input type="checkbox" name="box">Cisco Networking
+      <input type="checkbox" name="box">Redhat Linux
+      <input type="checkbox" name="box">Linux essentials
+      <br><br>
+      Project Name: <input type="textbox">
+      <br><br>
+      Internship Completed:
+      <select name="Internship">
+        <option>Select Internship</option>
+        <option>Yes</option>
+        <option>No</option>
+      </select>
+    </fieldset>
+  </div>
+  <br><br>
+  <div class="d2">
+    <fieldset>
+      <legend>Personal Details</legend>
+      FirstName: <input type="textbook">
+      <br><br>
+      MiddleName: <input type="textbook">
+      <br><br>
+      LastName: <input type="textbook">
+      <br><br>
+      Branch:
+      <select name="branch">
+        <option>Computer Engineering</option>
+        <option>Information Technology</option>
+        <option>AIML</option>
+      </select>
+      <br><br>
+      Gender: <br>
+      <input type="radio" name="gender">Male
+      <br>
+      <input type="radio" name="gender">Female
+      <br>
+      <input type="radio" name="gender">Other
+      <br><br>
+      Phone (mob):
+      <input type="text" name="b1" maxlength="5" value="+91">
+      <input type="number">
+      <br><br>
+      Address: <br>
+      <textarea name="Address" rows="4" cols="50"></textarea>
+      <br><br>
+      Email: <input type="email" value="abc@gmail.com">
+      <br><br>
+      Password: <input type="password">
+      <br><br>
+      Re-type Password: <input type="password">
+      <br><br>
+    </fieldset>
+  </div>
+  <br><br>
+  <div id="d3">
+    <fieldset>
+      <legend>File Upload</legend>
+      Resume: <input type="file" name="file" accept="application/file">
+      <br><br>
+      Marksheet: <input type="file" name="file" accept="application/file">
+      <br><br>
+    </fieldset>
+  </div>
+</form>
+</body>
+</html>
