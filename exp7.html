@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Promise Number Classifier</title>
+</head>
+<body>
+<h2>Check the console for results</h2>
+<script>
+const input = prompt("Enter numbers separated by commas:");
+const nums = input.split(",").map(x => +x.trim());
+let i = 0;
+const classify = n => new Promise(res =>
+  res(n > 0 ? "Positive" : n < 0 ? "Negative" : "Zero")
+);
+const next = () => {
+  if (i < nums.length) {
+    classify(nums[i]).then(msg => {
+      const p = document.createElement('p');
+      p.textContent = nums[i] + " is " + msg;
+      document.body.appendChild(p);
+      i++;
+      next();
+    });
+  }
+};
+next();
+</script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Fibonacci Iterator</title>
+</head>
+<body>
+<h2>Fibonacci numbers will be displayed below:</h2>
+<script>
+const fib = {
+  [Symbol.iterator]: () => {
+    let a = 0, b = 1, count = 0, max = 10;
+    return {
+      next: () => {
+        if (count++ >= max) return { done: true };
+        let value = a;
+        [a, b] = [b, a + b];
+        return { value, done: false };
+      }
+    };
+  }
+};
+
+for (let n of fib) {
+  const p = document.createElement('p');
+  p.textContent = n;
+  document.body.appendChild(p);
+}
+</script>
+</body>
+</html>

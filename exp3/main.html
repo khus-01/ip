@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Student Placement Registration Form</title>
+<style>
+body {
+  background-color: skyblue;
+  font-family: Arial, sans-serif;
+}
+#d1 {
+  color: azure;
+  background-color: brown;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+.d2 {
+  background-color: pink;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+#d3 {
+  color: azure;
+  background-color: goldenrod;
+  padding: 15px;
+}
+fieldset {
+  border-radius: 5px;
+}
+legend {
+  font-weight: bold;
+}
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select,
+textarea,
+input[type="number"] {
+  margin-top: 5px;
+  margin-bottom: 15px;
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+label {
+  font-weight: bold;
+}
+</style>
+</head>
+<body>
+<h1>Student Placement Registration Form</h1>
+<hr>
+<form>
+  <div id="d1">
+    <fieldset>
+      <legend>Academic Information</legend>
+      Last Year Percentage<input type="text" id="per" name="per" />
+      <br>
+      Any Certification:<br>
+      <input type="checkbox" id="pcap" name="certifications" value="PCAP_Python" />
+      <label for="pcap">PCAP Python</label><br>
+      <input type="checkbox" id="cisco" name="certifications" value="Cisco Networking" />
+      <label for="cisco">Cisco Networking</label><br>
+      <input type="checkbox" id="redhat" name="certifications" value="Redhat Linux" />
+      <label for="redhat">Redhat Linux</label><br>
+      <input type="checkbox" id="linux" name="certifications" value="Linux essentials" />
+      <label for="linux">Linux Essentials</label><br><br>
+      Project Name:<input type="text" id="project" name="project" />
+      <br>
+      Internship Completed:<select id="internship" name="internship">
+        <option value="">Select Internship</option>
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+      </select>
+    </fieldset>
+  </div>
+  <div class="d2">
+    <fieldset>
+      <legend>Personal Details</legend>
+      First Name:<input type="text" id="fname" name="fname" />
+      Middle Name:<input type="text" id="mname" name="mname" />
+      Last Name:<input type="text" id="lname" name="lname" />
+      Branch:
+      <select id="branch" name="branch">
+        <option value="computer_engineering">Computer Engineering</option>
+        <option value="information_technology">Information Technology</option>
+        <option value="aiml">AIML</option>
+      </select><br>
+      Gender:<br>
+      <input type="radio" id="male" name="gender" value="male" />
+      <label for="male">Male</label><br>
+      <input type="radio" id="female" name="gender" value="female" />
+      <label for="female">Female</label><br>
+      <input type="radio" id="other" name="gender" value="other" />
+      <label for="other">Other</label><br><br>
+      Phone (mob):<input type="text" id="phone" name="phone" maxlength="15" placeholder="+91" />
+      Address:<textarea id="address" name="address" rows="4" cols="50"></textarea>
+      Email:<input type="email" id="email" name="email" value="abc@gmail.com" />
+      Password:<input type="password" id="password" name="password" />
+      Re-type Password:<input type="password" id="repassword" name="repassword" />
+    </fieldset>
+  </div>
+  <div id="d3">
+    <fieldset>
+      <legend>File Upload</legend>
+      Resume:<input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" />
+      <br>
+      Marksheet:<input type="file" id="marksheet" name="marksheet" accept=".pdf,.jpg,.png" />
+      <br>
+      <input type="submit" value="Submit" />
+    </fieldset>
+  </div>
+</form>
+</body>
+</html>

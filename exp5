@@ -1,0 +1,71 @@
+// 1. if the even or odd Normal function:
+function add(a) {
+  if (a === 0) {
+    console.log("no. is 0");
+  }
+  else if (a % 2 === 0) {
+    console.log("even.");
+  }
+  else {
+    console.log("odd.");
+  }
+}
+add(5); 
+add(10); 
+add(0);
+
+// 2. find the area and parameter using Normal function:
+const pi = 3.14;
+function circle(r=2) {
+  return {
+    area: pi * r * r,
+    perimeter: 2 * pi * r
+  };
+}
+console.log(circle());
+
+// 3. factorial of a number Using Anonymous function:
+let factorial = function(n) {
+  let result = 1;
+  for (let i = 2; i <= n; i++) {
+    result *= i;
+  }
+  console.log(result);
+};
+factorial(5);
+
+// 4. if the year is leap year or not Using Anonymous function:
+let LeapYear = function(year) {
+  if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
+    console.log(year + " is a leap year.");
+  } else {
+    console.log(year + " is not a leap year.");
+  }
+};
+LeapYear(2019);
+LeapYear(2020);
+
+// 5. find the fibonacci series using Arrow function:
+let fibo = (n) => {
+  let a = 0, b = 1;
+  for (let i = 0; i < n; i++) {
+    console.log(a);
+    let next = a + b;
+    a = b;
+    b = next;
+  }
+};
+fibo(10); 
+
+// 6. rest function using Arrow function:
+let rest = (...a) => {
+  let sum = 0;
+  for (let i of a) {
+    sum = sum + i;
+  }
+  return sum;
+};
+
+console.log(rest(1, 2, 3, 4, 5)); 
+console.log(rest(1, 2, 5)); 
+console.log(rest());

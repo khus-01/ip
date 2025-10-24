@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Basic Registration Form</title>
+<style>
+  body {
+    background-color: #933bd1; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    height: 100vh;
+    margin: 0;
+  }
+  form {
+    background: white;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    color: black;
+    width: 400px;
+  }
+  button {
+    background-color: #6a0dad;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .gender-group {
+    margin-bottom: 15px;
+  }
+  label {
+    margin-right: 10px;
+  }
+</style>
+</head>
+<body>
+<h2>Register</h2>
+<form name="f1" id="regForm" onsubmit="return val()">
+Username: <input type="text" name="un"><br><br>
+Email: <input type="email" name="email"><br><br>
+Phone Number: <input type="text" name="phone" placeholder="10-digit phone number"><br><br>
+<div class="gender-group">
+Gender:
+<label><input type="radio" name="gender" value="male"> Male</label>
+<label><input type="radio" name="gender" value="female"> Female</label>
+<label><input type="radio" name="gender" value="other"> Other</label>
+</div>
+Password: <input type="password" name="pass"><br><br>
+Confirm Password: <input type="password" name="cpass"><br><br>
+<button type="submit">Register</button>
+</form>
+<script>
+function val() {
+  let un = document.f1.un.value.trim();
+  let email = document.f1.email.value.trim();
+  let phone = document.f1.phone.value.trim();
+  let pass = document.f1.pass.value;
+  let cpass = document.f1.cpass.value;
+  let genderOptions = document.getElementsByName('gender');
+  let genderSelected = false;
+  for (let i = 0; i < genderOptions.length; i++) {
+    if (genderOptions[i].checked) {
+      genderSelected = true;
+      break;
+    }
+  }
+  if (!/^[A-Za-z]+$/.test(un)) {
+    alert('Username must contain only letters.');
+    return false;
+  }
+  if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)) {
+    alert('Please enter a valid email address.');
+    return false;
+  }
+  if (phone.length !== 10 || isNaN(phone)) {
+    alert('Please enter a valid 10-digit phone number.');
+    return false;
+  }
+  if (!genderSelected) {
+    alert('Please select your gender.');
+    return false;
+  }
+  if (pass.length < 8) {
+    alert('Password must be at least 8 characters long.');
+    return false;
+  }
+  if (pass !== cpass) {
+    alert('Passwords do not match.');
+    return false;
+  }
+  alert('Registration successful!');
+  return true;
+}
+</script>
+</body>
+</html>
